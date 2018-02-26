@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" style="" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="language" content="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/PA_AdminLTE.css' %}" rel="stylesheet" type="text/css">
+  	<link href="{% static 'css/PA_theme.css' %}" rel="stylesheet" type="text/css">
+
+<title>Tintash</title>
+</head>
+<body>
+		{% block nav %}
+			{% include 'tintashusers/base/nav.html' %}
+		{%endblock%}
+		<div class="container">
+		<div class="clearfix"></div>
+		{% include 'tintashusers/base/messages.html' %}
+		{% block main %}
+		{% endblock%}
+
+		</div>
+
+ </body>
+ <footer class="main-footer">© Tintash 2018.  All rights reserved.</footer>
+ </html>
+ {% block js %}
+	<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/underscore-min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datetimepicker.min.css' %}">
+    <script src="{%static 'js/datagrid/jquery.dataTables.min.js' %}" type="text/javascript"></script>
+    <script src="{%static 'js/datagrid/dataTables.bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{%static 'js/datagrid/dataTables.responsive.min.js' %}" type="text/javascript"></script>
+{% endblock %}

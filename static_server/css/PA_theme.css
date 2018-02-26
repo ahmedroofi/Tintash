@@ -1,0 +1,64 @@
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);*/
+@font-face{font-family:'Roboto';src:url('../fonts/Roboto-Regular.ttf')  format('truetype')}
+
+/* ==========================================================================
+ Author's custom styles
+========================================================================== */
+html,body{font-size:12px;overflow-x:hidden;height:100%;font-family:'Arial',sans-serif;}
+body{background-color:#ffffff;}
+.bdbg{background-color:#f0f1f6;}
+.whiteBox{background:#FFF;}
+.row{margin-left:0;margin-right:-15px;}
+
+
+/* For Full Width Container */
+/*.container{width:100%;margin:0;padding:0;float:left;position:relative;}*/
+
+/* For Full Width Container */
+.brand-logo{margin:0px 0 0 8px;display:inline-block;}
+
+h1,h2,h3,h4,h5,h6{font-family:'Roboto',sans-serif;font-weight:500;margin-bottom:15px;}
+h1,.h1{font-size:18px;}
+.heading{border-bottom:1px solid #c9cfd5;padding-bottom:5px;}
+.heading small{font-size:13px;font-family:'Roboto',sans-serif;font-weight:400;color:#2e2d2d;}
+
+
+
+/* Site Navigation ====================================== */
+
+
+a {
+    color: #333;
+}
+
+/* .navbar-default .navbar-nav > li > a {
+color: #ffffff;
+}*/
+
+.navbar {
+	background-color:#FFF;
+    position: relative;
+	border-bottom:3px solid #2BA0F9;
+    text-align: center;
+}
+/*.nav {
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+} */
+
+.clearfix {
+	padding: 10px;
+}
+
+.alert-success {
+	background-color: #dff2bf;
+	color: #4f8a10;
+	display: none;
+}
+
+.alert-danger {
+	display: none;
+}

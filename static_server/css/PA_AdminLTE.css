@@ -1,0 +1,164 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,500,600,700,300italic,400italic,600italic,700italic);
+
+
+/*!
+ * Core: Genral Layout Style
+ * -------------------------
+ */
+html,
+body {
+  min-height: 100%;
+}
+.layout-boxed html,
+.layout-boxed body {
+  height: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background:#f9f9f9;
+
+}
+/* Layout */
+.wrapper {
+  min-height: 100%;
+  position: static;
+  overflow: hidden;
+}
+.wrapper:before,
+.wrapper:after {
+  content: " ";
+  display: table;
+}
+.wrapper:after {
+  clear: both;
+}
+.layout-boxed .wrapper {
+  max-width: 990px;
+  margin: 0 auto;
+  min-height: 100%;
+  position: relative;
+}
+.layout-boxed {
+  background:#ffffff;
+}
+/*
+ * Content Wrapper - contins main content
+ * ```.right-side has been deprecated as of v2.0 in favor of .content-wrapper  ```
+ */
+.content-wrapper,
+.right-side,
+.main-footer {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: -o-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -webkit-transition: margin-left 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: margin-left 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: margin-left 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  /*margin-left: 230px;*/
+  z-index: 820;
+}
+#tinFooter {
+    background: none repeat scroll 0 0 #ffffff;
+    border-top: 1px solid #eee;
+    color: #999999;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    position: relative; !important;
+}
+
+.main-footer {
+  height: 40px;
+    padding: 10px;
+  color: #999999;
+   background:#ffffff ;
+  border-top: 1px solid #eee;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+
+
+
+/*
+ * Page: Login & Register
+ * ----------------------
+ */
+.login-logo,
+.register-logo {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 11px;
+  font-weight: 300;
+}
+
+
+.register-footer {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+.login-logo a,
+.register-logo a {
+  color: #444;
+}
+.login-page,
+.register-page {
+}
+.login-box,
+.register-box {
+  width: 400px;
+  margin:5.5% auto 0;
+
+}
+@media (max-width: 768px) {
+  .login-box,
+  .register-box {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+.login-box-body,
+.register-box-body {
+  background: #fff;
+  padding: 40px;
+  color: #444;
+  border-top: 0;
+  color: #666;
+  border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius:3px;
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.login-box-body .form-control-feedback,
+.register-box-body .form-control-feedback {
+  color: #303641;
+}
+.login-box-msg,
+.register-box-msg {
+  margin: 0;
+  text-align: center;
+  padding: 0 20px 20px 20px;
+  font-size: 14px;
+  color: #303641;
+}
+
+
+
+
+/* form elements */
+input.form-control {font-size:14px;color:#999999 !important;border-color: #cccccc}
+.btn-sm, .btn-group-sm > .btn {font-size: 13px;padding: 7px 10px;}
+.btn {}
+.btn-xs, .btn-group-xs > .btn {font-size: 12px !important;margin-top: 6px}
+.btn-circle {width:15px;height:14px;text-align: center;line-height:13px;color: #656d78;/*border: 1px solid #BBB;*/padding:0px;}
+.tooltip-inner {max-width:459px !important;width: 277px !important;text-align: left !important;background-color: #000;}
+.tooltip.bottom .tooltip-arrow {left: 3.5% !important;}
+.form-control-feedback {left:0;background:#F9F9F9;margin:0px;height: 30px;width:30px;}
+.has-feedback .form-control {padding-left: 42.5px; padding-right: 12px}
