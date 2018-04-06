@@ -102,9 +102,9 @@ WSGI_APPLICATION = 'Tintash.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Tintash',
-        'USER': 'postgres',
-        'PASSWORD': 'skinoren',
+        'NAME': 'tin',
+        'USER': 'awesome_user',
+        'PASSWORD': 'awesome_password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
