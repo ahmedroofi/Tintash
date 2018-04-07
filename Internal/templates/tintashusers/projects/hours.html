@@ -1,0 +1,39 @@
+{% extends "tintashusers/base/base.html" %}
+{% load staticfiles %}
+{% block main %}
+<p>
+  <button class="btn btn-primary addhours" type="button" data-toggle="modal" data-target="#SHModal">
+    Add Hours
+  </button>
+</p>
+
+<div id="SHModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">ADD Hours</h4>
+      </div>
+      <div class="modal-body">
+      <form class="subhr">
+        <p>{{phform}}</p>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary submithr" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock%}
+{% block js %}
+{{block.super}}
+<script>
+var user_id = {{user.id}}
+</script>
+<script src="{% static 'js/projects.js' %}" type="text/javascript"></script>
+{% endblock %}

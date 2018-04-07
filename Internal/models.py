@@ -15,10 +15,29 @@ class Places(models.Model):
 
 
 class Projects(models.Model):
-    project = models.CharField(max_length=255)
+    class Meta:
+        verbose_name_plural = "Projects"
+    name = models.CharField(max_length=255)
+    description = models.TextField(max_length=2000, default="")
+    team = models.ManyToManyField(User)
 
     def __str__(self):
-        return self.project
+        return self.name
+
+
+class ProjectHours(models.Model):
+    class Meta:
+        verbose_name_plural = "ProjectHours"
+    employee = models.ForeignKey(User)
+    project = models.ForeignKey(Projects)
+    from_date = models.DateField()
+    to_date = models.DateField()
+    hours = models.FloatField()
+    approved_pm = models.BooleanField(default=False)
+    approved_am = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.employee.first_name+" "+self.employee.last_name
 
 
 class Departments(models.Model):
