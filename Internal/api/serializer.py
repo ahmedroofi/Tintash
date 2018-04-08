@@ -33,8 +33,12 @@ class ProjectHoursSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProjectHours
-        fields = ('project', 'from_date',  'to_date', 'hours')
-        read_only_field = 'employee'
+        fields = ('id', 'project', 'from_date',  'to_date', 'hours',
+                  'approved_am', 'approved_pm')
+        extra_kwargs = {
+            'approved_am': {'read_only': True},
+            'approved_pm': {'read_only': True},
+        }
 
     def to_representation(self, obj):
         response = super(ProjectHoursSerializer, self).to_representation(obj)
@@ -48,3 +52,21 @@ class ProjectHoursSerializer(serializers.ModelSerializer):
             raise exceptions.PermissionDenied()
         ph = super(ProjectHoursSerializer, self).create(validated_data)
         return ph
+
+
+class ProjectHoursPMSerializer(serializers.ModelSerializer):
+
+    project = UserFilteredPrimaryKeyRelatedField(queryset=Projects.objects.all())
+    employee = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ProjectHours
+        fields = ('id', 'project', 'from_date',  'to_date', 'hours', 'employee',
+                  'approved_am', 'approved_pm')
+        extra_kwargs = {
+            'approved_am': {'read_only': True},
+            'employee': {'read_only': True},
+        }
+
+    def get_employee(self, obj):
+        return '{} {}'.format(obj.employee.first_name, obj.employee.last_name)

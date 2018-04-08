@@ -24,6 +24,7 @@ class Device(models.Model):
     PC_CHOICES = (('New', _('New')), ('Used', _('Used')))
     phone_regex = RegexValidator(regex=r'^\+?1?(\d|-){1,200}$',
                                  message="Invalid Phone Number")
+    id = models.AutoField(primary_key=True)
     type = models.ForeignKey(DeviceType, null=True)
     name = models.CharField(max_length=255, blank=True)
     model = models.CharField(max_length=255, blank=True)
@@ -49,6 +50,7 @@ class Device(models.Model):
 
 
 class DeviceAssingment(models.Model):
+    id = models.AutoField(primary_key=True)
     device = models.OneToOneField(Device, related_name="assigned", default=None)
     assign_to = models.ForeignKey(User, null=True, default=None,
                                   related_name="assigned_devices")

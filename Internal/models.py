@@ -17,6 +17,7 @@ class Places(models.Model):
 class Projects(models.Model):
     class Meta:
         verbose_name_plural = "Projects"
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField(max_length=2000, default="")
     team = models.ManyToManyField(User)
@@ -28,6 +29,7 @@ class Projects(models.Model):
 class ProjectHours(models.Model):
     class Meta:
         verbose_name_plural = "ProjectHours"
+    id = models.AutoField(primary_key=True)
     employee = models.ForeignKey(User)
     project = models.ForeignKey(Projects)
     from_date = models.DateField()
@@ -41,6 +43,7 @@ class ProjectHours(models.Model):
 
 
 class Departments(models.Model):
+    id = models.AutoField(primary_key=True)
     department = models.CharField(max_length=255)
 
     def __str__(self):
@@ -58,7 +61,7 @@ class EmployeeProfile(models.Model):
     gender = models.CharField(max_length=1,
                               choices=GENDER_CHOICES, blank=True, null=True)
     location = models.CharField(max_length=30, blank=True)
-    department = models.ForeignKey(Departments, null=True, default=None)
+    department = models.ForeignKey(Departments, null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
 
