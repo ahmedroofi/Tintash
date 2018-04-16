@@ -15,14 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.conf import settings
-from django.views.static import serve
+from rest_framework_jwt.views import obtain_jwt_token
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('social_django.urls', namespace='social')),
     url(r'^', include('Internal.urls', namespace='tintash')),
     url(r'^devices/', include('Devices.urls', namespace='devices')),
-    # url(r'^static/(?P<path>.*)$', serve,
-    #     {'document_root': settings.STATIC_ROOT}),
+    url(r'^api/auth/token', obtain_jwt_token),
+    url(r'^auth/', include('rest_framework_social_oauth2.urls')),
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
